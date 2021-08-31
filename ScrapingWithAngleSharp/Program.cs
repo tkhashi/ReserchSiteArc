@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using AngleSharp;
@@ -15,30 +16,40 @@ namespace ScrapingWithAngleSharp
             var config = Configuration.Default.WithDefaultLoader();
             var context = BrowsingContext.New(config);
             //対象のアドレスをconfigの設定で開く？
-            var baseUrl = "https://en.wikipedia.org/wiki/List_of_The_Big_Bang_Theory_episodes";
-            var domain = Regex.Match(baseUrl, @"(https?://[^/]+/)").Value;
+            var baseUrl = "https://blog.okazuki.jp/entry/2017/07/23/165809";
+            var domain = Regex.Match(baseUrl, @"https?://[^/]+/?").Value;
             var http = Regex.Match(baseUrl, @"https?:").Value;
             var document = await context.OpenAsync(baseUrl);
-
             //対象の要素を取得
             var aTag = "a";
             var cells = document.QuerySelectorAll(aTag);
             //取得した要素のhref属性を取得
-            var links = cells.Select(cell => cell.GetAttribute("href")).Where(href => href == "#cite_note-4");
+            var links = cells.Select(cell => cell.GetAttribute("href"));
 
-            var flagUrl = links
+            var flagUrls = links
+                .Where( link => link != null)
                 .Where(link => Regex.IsMatch(link, @"^#"))
-                .Select(link => domain.GetFullPath(link));
-            var relativePath = links
+                .Select(link => baseUrl.GetFullPath(link))
+                .ToList();
+            var relativePaths = links
+                .Where( link => link != null)
                 .Where(link => Regex.IsMatch(link, @"^[^/][^http][^#]"))
-                .Select(link => domain.GetFullPath(link));
-            var fullPath = links
-                .Where(link => Regex.IsMatch(link, @"^http"));
+                .Select(link => domain.GetFullPath(link))
+                .ToList();
+            var fullPaths = links
+                .Where( link => link != null)
+                .Where(link => Regex.IsMatch(link, @"^http"))
+                .ToList();
 
-            //foreach (var link in fullLinks)
-            //{
-            //    Console.WriteLine(link);
-            //}
+            var urlList = new List<string>();
+            urlList.AddRange(flagUrls);
+            urlList.AddRange(relativePaths);
+            urlList.AddRange(fullPaths);
+
+            foreach (var url in urlList)
+            {
+                Console.WriteLine(url);
+            }
 
         }
 
