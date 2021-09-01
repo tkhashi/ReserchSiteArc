@@ -9,6 +9,7 @@ namespace ScrapingWithAngleSharp
     {
         public static IEnumerable<string> GetElementByAttr(this IDocument document, string tag, string attr)
         {
+            //return document.Links.Select(link => link.)
             return document
                     .QuerySelectorAll(tag)
                     .Select(cell => cell.GetAttribute(attr));
