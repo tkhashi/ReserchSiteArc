@@ -12,12 +12,7 @@ namespace ScrapingWithAngleSharp
     {
         static void Main(string[] args)
         {
-            var scraping = new Scraping();
-            var urls = scraping.Scrape().Result;
-            foreach (var url in urls)
-            {
-                Console.WriteLine(url);
-            }
+            new ScrapingManager(1);
         }
     }
 }

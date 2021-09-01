@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text.RegularExpressions;
 using AngleSharp.Dom;
@@ -7,13 +8,27 @@ namespace ScrapingWithAngleSharp
 {
     public static class Extensions
     {
-        public static IEnumerable<string> GetElementByAttr(this IDocument document, string tag, string attr)
+        public static IEnumerable<string> GetFrameLink(this IDocument document)
         {
-            //return document.Links.Select(link => link.)
-            return document
-                    .QuerySelectorAll(tag)
-                    .Select(cell => cell.GetAttribute(attr));
+            var href = document
+                .QuerySelectorAll("frame")
+                .Select(cell => cell.GetAttribute("src"));
+            return href;
         }
+        public static IEnumerable<string> GetAHref(this IDocument document)
+        {
+            var href = document
+                .QuerySelectorAll("a")
+                .Select(cell => cell.GetAttribute("href"));
+            return href;
+        }
+
+        public static string GetTitle(this IDocument document)
+        {
+            var title = document.QuerySelector("title").TextContent != null? document.GetElementsByClassName("title").ToString();
+            return title;
+        }
+
 
         public static string GetFullPath(this string domain, string path)
         {
