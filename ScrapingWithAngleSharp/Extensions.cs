@@ -15,6 +15,7 @@ namespace ScrapingWithAngleSharp
                 .Select(cell => cell.GetAttribute("src"));
             return href;
         }
+
         public static IEnumerable<string> GetAHref(this IDocument document)
         {
             var href = document
@@ -25,7 +26,9 @@ namespace ScrapingWithAngleSharp
 
         public static string GetTitle(this IDocument document)
         {
-            var title = document.QuerySelector("title").TextContent != null? document.GetElementsByClassName("title").ToString();
+            var title = document.QuerySelector("title")?.TextContent != null
+                ? document.GetElementsByClassName("title").ToString()
+                : $"Don't get title({document.Links})";
             return title;
         }
 
