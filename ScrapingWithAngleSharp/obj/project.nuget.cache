@@ -1,13 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "rqmn6i1JcGcPDVJwjw4eORnKv5o83OQithYaC7xKhdNXzm8VXhhbT5XOK+9ku2TBRSxBid+xSBlfONJhhtJ4EQ==",
+  "dgSpecHash": "8o/Mo5l3JVSaffAjqQF8YgBAZ3R9v4ejrTEdTaGvLuV0L6zb6ce1870oDg/8Nud1L4KYqsLHMbqw7Lm9jj+XDw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Kazuhiro Takahashi\\work\\ScrapingWithAngleSharp\\ScrapingWithAngleSharp\\ScrapingWithAngleSharp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kazuhiro Takahashi\\.nuget\\packages\\anglesharp\\0.16.0\\anglesharp.0.16.0.nupkg.sha512",
     "C:\\Users\\Kazuhiro Takahashi\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Kazuhiro Takahashi\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.31\\microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
+    "C:\\Users\\Kazuhiro Takahashi\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512",
+    "C:\\Users\\Kazuhiro Takahashi\\.nuget\\packages\\prism.unity\\8.1.97\\prism.unity.8.1.97.nupkg.sha512",
+    "C:\\Users\\Kazuhiro Takahashi\\.nuget\\packages\\prism.wpf\\8.1.97\\prism.wpf.8.1.97.nupkg.sha512",
     "C:\\Users\\Kazuhiro Takahashi\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
-    "C:\\Users\\Kazuhiro Takahashi\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512"
+    "C:\\Users\\Kazuhiro Takahashi\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\Kazuhiro Takahashi\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512",
+    "C:\\Users\\Kazuhiro Takahashi\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512",
+    "C:\\Users\\Kazuhiro Takahashi\\.nuget\\packages\\unity.abstractions\\5.11.7\\unity.abstractions.5.11.7.nupkg.sha512",
+    "C:\\Users\\Kazuhiro Takahashi\\.nuget\\packages\\unity.container\\5.11.11\\unity.container.5.11.11.nupkg.sha512"
   ],
   "logs": []
 }

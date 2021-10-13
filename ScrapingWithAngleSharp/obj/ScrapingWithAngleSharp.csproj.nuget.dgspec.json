@@ -47,6 +47,14 @@
             "AngleSharp": {
               "target": "Package",
               "version": "[0.16.0, )"
+            },
+            "Prism.Unity": {
+              "target": "Package",
+              "version": "[8.1.97, )"
+            },
+            "Prism.Wpf": {
+              "target": "Package",
+              "version": "[8.1.97, )"
             }
           },
           "imports": [
